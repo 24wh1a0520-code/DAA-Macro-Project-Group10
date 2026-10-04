@@ -1,0 +1,30 @@
+Original faculty prompt:
+"Visualize DP state transitions for TSP with 4 cities."
+
+Detailed prompt used to create the visualization:
+
+Create a clean, professional, educational visualization (PNG, white background, suitable for a college report or PPT) that explains how the Held-Karp Dynamic Programming algorithm solves the Traveling Salesperson Problem (TSP) for exactly 4 cities: A, B, C, D. The salesperson starts at city A, visits every other city exactly once, and returns to A.
+
+Use this exact cost matrix (rows = from, columns = to):
+      A   B   C   D
+ A    0  10  15  20
+ B   10   0  35  25
+ C   15  35   0  30
+ D   20  25  30   0
+
+Show the DP states as boxes. Each state is (subset of visited cities, current city) and stores dp[subset][current city] = minimum cost to start at A, visit exactly that subset, and end at the current city. Arrange the states in columns from left to right:
+ 1. Start: {A}, dp = 0
+ 2. Subsets of size 2: {A,B}, {A,C}, {A,D}
+ 3. Subsets of size 3: {A,B,C}, {A,B,D}, {A,C,D}, each with the possible current cities
+ 4. Full set {A,B,C,D}, with each possible ending city
+ 5. Return to A, showing the final minimum tour cost
+
+Draw arrows for the transitions between states (moving from a smaller subset to a larger subset by visiting one new city) and label every arrow with its transition cost taken from the cost matrix above. For the final column, show the cost of returning to A and the total tour cost. Show the DP value (minimum cost so far) inside every state box. Make the transitions that give the minimum value for a state clearly visible, show the worse alternatives as lighter dashed arrows, and highlight the optimal tour path in a distinct color.
+
+Also include: the cost matrix as a small table, the DP recurrence
+ dp[S][j] = min over i in S-{j} of ( dp[S-{j}][i] + cost(i,j) ),
+and a final summary line with the optimal tour and its minimum cost.
+
+Requirements: clear readable labels, correct mathematical values computed from the matrix above (no invented numbers), no decorative clip-art or unnecessary decoration, no generic map or graph of cities. The picture must be understandable without reading the source code.
+
+Tool note: the figure was produced by generating Python (matplotlib) code that reads its numbers directly from the DP function in Project7_TSP_DP.py, so the picture and program always agree.

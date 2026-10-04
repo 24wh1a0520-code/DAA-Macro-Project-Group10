@@ -1,0 +1,16 @@
+Create a clear line chart comparing the theoretical time complexity
+growth of Merge Sort and Quick Sort for input sizes n = 10, 100,
+and 1000.
+
+Use n log2(n) as the theoretical growth function for Merge Sort
+and Quick Sort average case.
+
+Show:
+- Input size on the X-axis
+- Theoretical growth on the Y-axis
+- Separate labelled lines for Merge Sort and Quick Sort Average Case
+- Different markers and line styles
+- A title, legend, and grid
+
+Do not use actual execution-time measurements.
+Use a professional and easy-to-understand visualization.

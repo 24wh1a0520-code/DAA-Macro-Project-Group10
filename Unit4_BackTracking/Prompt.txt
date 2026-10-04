@@ -1,0 +1,30 @@
+Faculty prompt (exact):
+"Illustrate backtracking steps for coloring a 4-vertex graph using 3 colors."
+
+Expanded AI visualization prompt (used to create Visualization.png):
+
+Create a clear, professional educational FLOWCHART titled "Graph Coloring Using Backtracking - 4 Vertices, 3 Colors", suitable for a college report or PPT (white background, boxes and arrows, no unnecessary decoration, readable labels).
+
+Graph: 4 vertices A, B, C, D with edges A-B, A-C, B-C, B-D, C-D (adjacency matrix: A:0110, B:1011, C:1101, D:0110).
+Colors: Red, Green, Blue (tried in this order). Extra rule used in the program so that backtracking actually happens: Blue is not allowed on vertex C.
+Vertices are processed in the order A, B, C, D.
+
+PART 1 - Algorithm flowchart (left side):
+START -> Initialize 4-vertex graph, all vertices uncolored -> Select next vertex (start with A) -> Try next color (Red, Green, Blue) -> Decision "Is the color safe?" (allowed, and no neighbor has the same color)
+ YES -> Assign color -> Decision "All 4 vertices colored?" -> YES: SUCCESS / NO: select next vertex
+ NO -> Decision "Any color left to try?" -> YES: try next color / NO: BACKTRACK (return to the previous vertex, remove its color, change its color, continue)
+
+PART 2 - Actual execution of the Python program Project12_GraphColoring.py (right side), as boxes connected by arrows, in this exact order:
+ 1. Vertex A: Red is safe -> A = Red
+ 2. Vertex B: Red not safe (A has Red); Green safe -> B = Green
+ 3. Vertex C: Red not safe (A has Red); Green not safe (B has Green); Blue not allowed on C -> NO VALID COLOR
+ 4. BACKTRACK #1: back to B, remove Green; Blue safe -> B = Blue
+ 5. Vertex C again: Red not safe (A has Red); Green safe -> C = Green
+ 6. Vertex D: Red safe -> D = Red
+Highlight failed choices, the backtrack step and successful assignments in different colors (failed = red, success = green, backtrack box in red outline).
+
+FINAL RESULT: all 4 vertices colored: A = Red, B = Blue, C = Green, D = Red. Show the final graph with colored vertices and a check that every edge connects two different colors.
+
+Do not create a generic graph-coloring picture and do not show any step that does not occur in the program.
+
+Tool note: the flowchart was produced by generating Python (matplotlib) drawing code from this prompt, using the step order printed by Project12_GraphColoring.py.

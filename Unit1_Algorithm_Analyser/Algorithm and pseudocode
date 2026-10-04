@@ -1,0 +1,38 @@
+# Algorithm and Pseudocode
+
+## 1. Merge Sort
+
+Merge Sort is a divide-and-conquer sorting algorithm. It divides the array into smaller parts, sorts them, and merges the sorted parts.
+
+### Pseudocode
+
+MERGE_SORT(array):
+1. If the array contains 0 or 1 element, return it.
+2. Find the middle position.
+3. Divide the array into left and right halves.
+4. Recursively apply MERGE_SORT to both halves.
+5. Merge the two sorted halves.
+6. Return the sorted array.
+
+### Time Complexity
+- Best Case: O(n log n)
+- Average Case: O(n log n)
+- Worst Case: O(n log n)
+
+## 2. Quick Sort
+
+Quick Sort is a divide-and-conquer algorithm. It selects a pivot and partitions the array so that smaller elements are placed before the pivot and larger elements after it.
+
+### Pseudocode
+
+QUICK_SORT(array, low, high):
+1. If low is less than high:
+2. Select a pivot and partition the array.
+3. Place the pivot in its correct position.
+4. Recursively apply QUICK_SORT to the left part.
+5. Recursively apply QUICK_SORT to the right part.
+
+### Time Complexity
+- Best Case: O(n log n)
+- Average Case: O(n log n)
+- Worst Case: O(n²)

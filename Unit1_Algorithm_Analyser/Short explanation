@@ -1,0 +1,26 @@
+# Algorithm Logic and Visualization Explanation
+
+## Algorithm Logic
+
+Merge Sort divides the input array into two halves repeatedly.
+It sorts each half and then combines the sorted halves.
+Its time complexity is O(n log n) in the best, average, and worst cases.
+
+Quick Sort selects a pivot and partitions the array around it.
+It then recursively sorts the left and right partitions.
+Its average time complexity is O(n log n), while its worst-case
+time complexity is O(n²).
+
+## Visualization Explanation
+
+The line chart compares the theoretical growth of Merge Sort
+and Quick Sort average case for input sizes 10, 100, and 1000.
+
+The X-axis represents the input size, and the Y-axis represents
+the theoretical growth value n log2(n).
+
+Both lines overlap because both algorithms have the same
+average-case growth rate, O(n log n).
+
+The chart uses theoretical values and does not represent
+actual execution time.
