@@ -1,0 +1,57 @@
+PROJECT 14 - TSP BRANCH-AND-BOUND SEARCH TREE   (DAA Macro Project, Group G10)
+
+=====================================================================
+1. ORIGINAL FACULTY PROMPT
+=====================================================================
+"Draw a search tree showing bounding and pruning for TSP with 4 cities."
+
+Expected outcome: "Hierarchical tree showing cost bounds."
+
+=====================================================================
+2. EXPANDED PROMPT FOR THE VISUALIZATION
+=====================================================================
+Create a professional, clean, academic-style educational diagram titled
+"TSP Using Branch and Bound - Search Tree for 4 Cities".
+
+Problem: Traveling Salesperson Problem with four cities A, B, C, D.
+The salesperson starts at city A, visits B, C and D exactly once, and returns to A.
+
+Cost matrix (use exactly this matrix, shown on the diagram):
+
+   |  A   B   C   D
+ --+----------------
+ A |  0  10  15  20
+ B | 10   0  35  25
+ C | 15  35   0  30
+ D | 20  25  30   0
+
+The diagram must show:
+- A hierarchical search tree of partial tours, starting from the root "A".
+- Branch expansion: A -> B, A -> C, A -> D, and their further extensions.
+- At every node: the partial tour, the accumulated path cost, and a valid lower bound.
+  (Lower bound = path cost + cheapest edge leaving the last city
+   + sum over unvisited cities of the cheapest edge leaving each of them.)
+- The best complete tour cost found so far (the incumbent) at each pruning decision.
+- Branch pruning, with the reason written on the node, for example "LB 95 >= best 80".
+- The final optimal tour and the minimum tour cost.
+
+The diagram must clearly distinguish:
+- Expanded nodes   : branches explored by the algorithm (lower bound < best known cost)
+- Pruned nodes     : branches discarded because their lower bound cannot beat the best known cost
+                     (red dashed border, red cross, label "PRUNED")
+- Complete tours   : routes that visit all four cities and return to A
+- Optimal tour     : the minimum-cost valid tour (green, thick border, label "OPTIMAL TOUR")
+
+Use arrows to show the search order (and small numbers #1, #2, ... for the visiting order),
+a clear legend, readable mathematical notation, and a clean layout suitable for a college PPT.
+Do not overcrowd the tree.
+
+ACCURACY RULE: every cost, lower bound and pruning decision in the diagram must come from the
+actual calculations of Project14_TSP_BnB.py. Do not invent values and do not mark a branch as
+pruned unless the program really pruned it.
+
+=====================================================================
+3. HOW THE PROMPT WAS USED
+=====================================================================
+The Python program records every node of the search tree while it runs and then draws
+Visualization.png from those recorded values, so the picture always matches the code.
